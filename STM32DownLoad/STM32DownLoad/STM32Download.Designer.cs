@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(STM32Download));
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.GetSimulatorToolSerialNumber = new System.Windows.Forms.ToolStripMenuItem();
@@ -76,9 +77,9 @@
             this.buttonStart_2 = new System.Windows.Forms.Button();
             this.buttonStart_1 = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.button_SelectVersion = new System.Windows.Forms.Button();
             this.textBox_VersionPath = new System.Windows.Forms.TextBox();
             this.buttonStartALL = new System.Windows.Forms.Button();
-            this.button_SelectVersion = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -578,6 +579,16 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "版本信息";
             // 
+            // button_SelectVersion
+            // 
+            this.button_SelectVersion.Location = new System.Drawing.Point(474, 31);
+            this.button_SelectVersion.Name = "button_SelectVersion";
+            this.button_SelectVersion.Size = new System.Drawing.Size(85, 25);
+            this.button_SelectVersion.TabIndex = 10;
+            this.button_SelectVersion.Text = "选择版本";
+            this.button_SelectVersion.UseVisualStyleBackColor = true;
+            this.button_SelectVersion.Click += new System.EventHandler(this.button_SelectVersion_Click);
+            // 
             // textBox_VersionPath
             // 
             this.textBox_VersionPath.BackColor = System.Drawing.Color.White;
@@ -599,16 +610,6 @@
             this.buttonStartALL.UseVisualStyleBackColor = true;
             this.buttonStartALL.Click += new System.EventHandler(this.buttonStartALL_Click);
             // 
-            // button_SelectVersion
-            // 
-            this.button_SelectVersion.Location = new System.Drawing.Point(474, 31);
-            this.button_SelectVersion.Name = "button_SelectVersion";
-            this.button_SelectVersion.Size = new System.Drawing.Size(85, 25);
-            this.button_SelectVersion.TabIndex = 10;
-            this.button_SelectVersion.Text = "选择版本";
-            this.button_SelectVersion.UseVisualStyleBackColor = true;
-            this.button_SelectVersion.Click += new System.EventHandler(this.button_SelectVersion_Click);
-            // 
             // STM32Download
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -622,6 +623,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "STM32Download";
             this.Text = "STM32Download";

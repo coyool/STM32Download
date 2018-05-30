@@ -1137,8 +1137,15 @@ namespace STM32DownLoad
                     break;
             }
         }
+        private void DisableMaxAndMin()
+        {
+            this.MaximumSize = this.Size;
+            this.MinimumSize = this.Size;
+            this.MaximizeBox = false;
+        }
         private void STM32Download_Load(object sender, EventArgs e)
         {
+            DisableMaxAndMin();
             m_strSTM_LINK = AppDomain.CurrentDomain.BaseDirectory + "/ST-LINK_CLI.exe";
             Control.CheckForIllegalCrossThreadCalls = false;
             ClearSimulatorToolSerial();
