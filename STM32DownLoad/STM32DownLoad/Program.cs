@@ -16,7 +16,8 @@ namespace STM32DownLoad
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new STM32Download());
+            STM32Download download = new STM32Download();
+            Application.Run(download);
         }
     }
 }

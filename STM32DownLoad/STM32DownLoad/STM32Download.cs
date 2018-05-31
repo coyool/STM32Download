@@ -220,7 +220,7 @@ namespace STM32DownLoad
             /*
             if(IsRunningDownload())
             {
-                MessageBox.Show("版本下载中，请待版本下载结束后再获取新的仿真器串号");
+                DisplayWarningInfo("版本下载中，请待版本下载结束后再获取新的仿真器串号");
                 return;
             }
             */
@@ -735,7 +735,7 @@ namespace STM32DownLoad
             if(0 == iIndex)
             {
                 this.GetSimulatorToolSerialNumber.Enabled = true;
-                MessageBox.Show("无法获取仿真器串口，请确认仿真器是否插入！");
+                DisplayWarningInfo("无法获取仿真器串口，请确认仿真器是否插入！");
                 return;
             }
             if(iIndex>0)
@@ -914,7 +914,7 @@ namespace STM32DownLoad
             }
             else
             {
-                MessageBox.Show("请选择要下载的版本！");
+                DisplayWarningInfo("请选择要下载的版本！");
             }
         }
 
@@ -926,7 +926,7 @@ namespace STM32DownLoad
             }
             else
             {
-                MessageBox.Show("请选择要下载的版本！");
+                DisplayWarningInfo("请选择要下载的版本！");
             }
         }
 
@@ -938,7 +938,7 @@ namespace STM32DownLoad
             }
             else
             {
-                MessageBox.Show("请选择要下载的版本！");
+                DisplayWarningInfo("请选择要下载的版本！");
             }
         }
 
@@ -950,7 +950,7 @@ namespace STM32DownLoad
             }
             else
             {
-                MessageBox.Show("请选择要下载的版本！");
+                DisplayWarningInfo("请选择要下载的版本！");
             }
         }
 
@@ -962,7 +962,7 @@ namespace STM32DownLoad
             }
             else
             {
-                MessageBox.Show("请选择要下载的版本！");
+                DisplayWarningInfo("请选择要下载的版本！");
             }
         }
 
@@ -974,7 +974,7 @@ namespace STM32DownLoad
             }
             else
             {
-                MessageBox.Show("请选择要下载的版本！");
+                DisplayWarningInfo("请选择要下载的版本！");
             }
         }
 
@@ -986,7 +986,7 @@ namespace STM32DownLoad
             }
             else
             {
-                MessageBox.Show("请选择要下载的版本！");
+                DisplayWarningInfo("请选择要下载的版本！");
             }
         }
 
@@ -998,7 +998,7 @@ namespace STM32DownLoad
             }
             else
             {
-                MessageBox.Show("请选择要下载的版本！");
+                DisplayWarningInfo("请选择要下载的版本！");
             }
         }
 
@@ -1010,10 +1010,14 @@ namespace STM32DownLoad
             }
             else
             {
-                MessageBox.Show("请选择要下载的版本！");
+                DisplayWarningInfo("请选择要下载的版本！");
             }
         }
 
+        private void DisplayWarningInfo(string strInfo)
+        {
+            MessageBox.Show(strInfo, "提示", MessageBoxButtons.OK);
+        }
         private void InitDownloadTimer()
         {
             DownloadOneTimer.Elapsed += new System.Timers.ElapsedEventHandler(DownloadTimeOut);//到达时间的时候执行事件；
@@ -1158,6 +1162,9 @@ namespace STM32DownLoad
             {
                 this.textBox_VersionPath.Text = File.ReadAllText(strFullPath);
             }
+            this.CenterToScreen();
+            this.ResumeLayout(false);
+            this.PerformLayout();
         }
 
         private void DownloadTimeOut(object source, System.Timers.ElapsedEventArgs e)
